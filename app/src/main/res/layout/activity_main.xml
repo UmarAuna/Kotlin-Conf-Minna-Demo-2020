@@ -10,6 +10,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guess_number"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/edt_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:hint="Enter 1..6"/>
+
+    <TextView
         android:id="@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,4 +45,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/count_up" />
+
+    <TextView
+        android:id="@+id/txt_congratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

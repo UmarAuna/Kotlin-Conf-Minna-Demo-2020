@@ -9,11 +9,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //val rollButton: Button = findViewById(R.id.roll_button)
 
 
         roll_button.setOnClickListener {
@@ -26,13 +24,28 @@ class MainActivity : AppCompatActivity() {
 
             }else if(result_text.text == "6"){
                 roll_button.isEnabled = false
+                Toast.makeText(this, "Counter has reach 6", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun rollDice(){
+     fun rollDice(){
        //Toast.makeText(this, "Button Click", Toast.LENGTH_SHORT).show()
+
+        val quickNumber:Int = edt_number.text.toString().toInt()
+
         val randomInt = Random().nextInt(6) + 1
         result_text.text = randomInt.toString()
+
+         edt_number.text.isEmpty().apply {
+              txt_congratulation.text = "EditText Cannot be empty please a number"
+         }
+
+        if (quickNumber == randomInt){
+            txt_congratulation.text = "Congratulation you guessed right YAY!!!!"
+        }
     }
+
+
+
 }
